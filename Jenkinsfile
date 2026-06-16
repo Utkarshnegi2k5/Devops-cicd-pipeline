@@ -75,13 +75,6 @@ pipeline{
                 }
             }
         }
-
-        stage('Remove image from jenkins'){
-            steps{
-                sh 'docker rmi -f $(docker images -a -q)'
-            }
-        }
-
         stage("Deploy image"){
             steps{
                 withAWS(credentials: 'aws', region: 'us-east-1'){
@@ -90,6 +83,11 @@ pipeline{
                     python pipeline/deploy.py
                     '''
                 }
+            }
+        }
+        stage('Remove image from jenkins'){
+            steps{
+                sh 'docker rmi -f $(docker images -a -q)'
             }
         }
     }
