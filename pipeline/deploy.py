@@ -2,7 +2,7 @@ import boto3
 import time
 
 CLUSTER = "gogreen_Cluster"
-SERVICE = "gogreeen_svc"
+SERVICE = "gogreeen_taskdefination-service-xuh08bxq"
 REGION = "us-east-1"
 
 def deploy():
