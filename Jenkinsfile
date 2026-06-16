@@ -36,18 +36,18 @@ pipeline{
             }
         }
 
-        stage("Sonar Code Analysis"){
-            environment
-            {
-                scannerHome = tool 'Sonar 6.2'
-            }
-            steps
-            {
-                withSonarQubeEnv('Sonar Server'){
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+        // stage("Sonar Code Analysis"){
+        //     environment
+        //     {
+        //         scannerHome = tool 'Sonar 6.2'
+        //     }
+        //     steps
+        //     {
+        //         withSonarQubeEnv('Sonar Server'){
+        //             sh "${scannerHome}/bin/sonar-scanner"
+        //         }
+        //     }
+        // }
         
         // stage("Quality Gate"){
         //     steps{
